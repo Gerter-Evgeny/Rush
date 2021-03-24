@@ -1,4 +1,4 @@
-# 
+
 #include <iostream>;
 
 using namespace std;
@@ -18,17 +18,17 @@ char** rush(int height, int size)
 		t[i] = new char[size];
 		for (int j = 0; j < size; j++)
 		{
-			if ((i == 0 || i == height - 1) && (j == 0 || j == size - 1))
+			if ((i == 0 && j == 0) || (i== height - 1 && j == size - 1))
 			{
-				t[i][j] = 'o';
+				t[i][j] = '/';
 			}
-			else if ((i == 0 || i == height - 1))
+			else if ((i == 0 && j == size - 1) || (i == height - 1 && j == 0))
 			{
-				t[i][j] = '-';
+				t[i][j] = '\\';
 			}
-			else if ((j == 0 || j == size - 1))
+			else if (((i == 0 || i == height - 1))||((j == 0 || j == size - 1)))
 			{
-				t[i][j] = '|';
+				t[i][j] = '*';
 			}
 			else
 			{
