@@ -1,4 +1,3 @@
-
 #include <iostream>;
 
 using namespace std;
@@ -18,7 +17,7 @@ char** rush(int height, int size)
 		t[i] = new char[size];
 		for (int j = 0; j < size; j++)
 		{
-			if ((i == 0 && j == 0) || (i== height - 1 && j == size - 1))
+			if ((i == 0 && j == 0 ) || ((i == (height - 1)) && (j == (size - 1)) && (size != 1) && (height!=1))) 
 			{
 				t[i][j] = '/';
 			}
@@ -26,7 +25,7 @@ char** rush(int height, int size)
 			{
 				t[i][j] = '\\';
 			}
-			else if (((i == 0 || i == height - 1))||((j == 0 || j == size - 1)))
+			else if (((i == 0 || i == height - 1)) || ((j == 0 || j == size - 1)))
 			{
 				t[i][j] = '*';
 			}
@@ -39,7 +38,6 @@ char** rush(int height, int size)
 	}
 
 	return t;
-
 }
 
 void PrintTwoArray(char** array, int height, int size)
@@ -63,7 +61,6 @@ void PrintTwoArray(char** array, int height, int size)
 	}
 
 	cout << endl;
-
 }
 
 int main()
@@ -87,5 +84,4 @@ int main()
 	system("pause");
 
 	return 0;
-
 }
